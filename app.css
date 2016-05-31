@@ -1,0 +1,5 @@
+/* CSS declarations go here */
+.panel-default .panel-heading {
+    background-color: #337ab7;
+    color: white;
+}

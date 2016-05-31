@@ -1,0 +1,158 @@
+<template name="calc">
+    <div class="col-xs-12"><h2>Body Composition Calculator</h2></div>
+
+    <div class="panel panel-body"><p>I initially built this calculator as practice for doing math in javascript and
+        jQuery, but after I built it, it turned out to be handy for my own personal use. Now I reference it all the time
+        when calculating my caloric needs and body fat percentage. (BTW; I'm a bit of a fitness nerd)</p>
+
+        <p>If you are interested in accurate results, the measurement section requires the use of some skinfold
+            calipers. Otherwise, just play around.</p>
+    </div>
+    <div class="col-sm-6 panel panel-body">
+
+        <h3>Body Stats</h3>
+
+        <div id="stats">
+            <p>Jackson-Pollock Method</p>
+            <select class="form-control" id="jp" name="jp">
+                <option value="JP3">JP3</option>
+                <option value="JP7">JP7</option>
+            </select>
+
+            <p>Gender</p>
+            <select class="form-control" id="mf">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+
+            <p>Basic Info</p>
+
+            <form>
+                <div class="input-group input-group-sm">
+                    <input class="form-control" type="number" id="age" placeholder="Age" required/>
+                    <span class="input-group-addon">Age</span>
+                </div>
+                <p></p>
+
+                <div class="input-group input-group-sm">
+                    <input class="form-control" type="number" id="weight" placeholder="Weight" required/>
+                    <span class="input-group-addon">(lbs)</span>
+                </div>
+                <p></p>
+            </form>
+        </div>
+        <p>Measurements</p>
+        <div>
+            <form>
+                <div>
+                    <form>
+                        <div class="input-group input-group-sm">
+                            <input class="stats form-control" type="number" id="chest" placeholder="Chest" />
+                            <span class="input-group-addon">(mm)</span>
+                        </div>
+                        <p></p>
+                        <div class="input-group input-group-sm">
+                            <input class="stats form-control" type="number" id="abdominal" placeholder="Abdominal" />
+                            <span class="input-group-addon">(mm)</span>
+                        </div>
+                        <p></p>
+                        <div class="input-group input-group-sm">
+                            <input class="stats form-control" type="number" id="thigh" placeholder="Thigh" />
+                            <span class="input-group-addon">(mm)</span>
+                        </div>
+                        <p></p>
+                    </form>
+                    <form class="jp7">
+                        <div class="input-group input-group-sm">
+                            <input class="stats form-control" type="number" id="tricep" placeholder="Tricep" />
+                            <span class="input-group-addon">(mm)</span>
+                        </div>
+                        <p></p>
+                        <div class="input-group input-group-sm">
+                            <input class="stats form-control" type="number" id="subscap" placeholder="Subscapular" />
+                            <span class="input-group-addon">(mm)</span>
+                        </div>
+                        <p></p>
+                        <div class="input-group input-group-sm">
+                            <input class="stats form-control" type="number" id="suprail" placeholder="Suprailiac" />
+                            <span class="input-group-addon">(mm)</span>
+                        </div>
+                        <p></p>
+                        <div class="input-group input-group-sm">
+                            <input class="stats form-control" type="number" id="midaxil" placeholder="Midaxilary" />
+                            <span class="input-group-addon">(mm)</span>
+                        </div>
+
+                    </form>
+                </div>
+            </form>
+        </div>
+        <button type="button" class="btn btn-block" id="btn1">Calculate</button>
+    </div>
+    <!--        <div id="col2">-->
+    <div class="col-sm-5 panel panel-body">
+        <h3 style="">Results</h3>
+        <button type='button' class='btn btn-sm' id='btn2'>Clear Results</button>
+        <div class="results"></div>
+        <svg class="chartBar"></svg>
+    </div>
+</template>
+
+<template name="jp7" xmlns="http://www.w3.org/1999/html">
+    <div class="input-group input-group-sm">
+        <input class="stats form-control" type="number" id="chest" placeholder="Chest"/>
+        <span class="input-group-addon">(mm)</span>
+    </div>
+    <p></p>
+    <div class="input-group input-group-sm">
+        <input class="stats form-control" type="number" id="abdominal" placeholder="Abdominal"/>
+        <span class="input-group-addon">(mm)</span>
+    </div>
+    <p></p>
+    <div class="input-group input-group-sm">
+        <input class="stats form-control" type="number" id="thigh" placeholder="Thigh"/>
+        <span class="input-group-addon">(mm)</span>
+    </div>
+    <p></p>
+    <div class="input-group input-group-sm">
+        <input class="stats form-control" type="number" id="tricep" placeholder="Tricep"/>
+        <span class="input-group-addon">(mm)</span>
+    </div>
+    <p></p>
+    <div class="input-group input-group-sm">
+        <input class="stats form-control" type="number" id="subscap" placeholder="Subscapular"/>
+        <span class="input-group-addon">(mm)</span>
+    </div>
+    <p></p>
+    <div class="input-group input-group-sm">
+        <input class="stats form-control" type="number" id="suprail" placeholder="Suprailiac"/>
+        <span class="input-group-addon">(mm)</span>
+    </div>
+    <p></p>
+    <div class="input-group input-group-sm">
+        <input class="stats form-control" type="number" id="midaxil" placeholder="Midaxilary"/>
+        <span class="input-group-addon">(mm)</span>
+    </div>
+</template>
+
+<template name="jp3" xmlns="http://www.w3.org/1999/html">
+    <div class="input-group input-group-sm">
+        <input class="stats form-control" type="number" id="chest" placeholder="Chest"/>
+        <span class="input-group-addon">(mm)</span>
+    </div>
+    <p></p>
+    <div class="input-group input-group-sm">
+        <input class="stats form-control" type="number" id="abdominal" placeholder="Abdominal"/>
+        <span class="input-group-addon">(mm)</span>
+    </div>
+    <p></p>
+    <div class="input-group input-group-sm">
+        <input class="stats form-control" type="number" id="thigh" placeholder="Thigh"/>
+        <span class="input-group-addon">(mm)</span>
+    </div>
+    <p></p>
+</template>
+
+<template name="test">
+    <h1>TESTING</h1>
+</template>
