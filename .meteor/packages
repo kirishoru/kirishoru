@@ -24,3 +24,4 @@ check
 themeteorchef:jquery-validation
 standard-minifier-css
 standard-minifier-js
+d3js:d3
