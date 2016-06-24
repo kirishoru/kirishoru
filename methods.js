@@ -2,7 +2,7 @@ Router.configure({
     layoutTemplate: 'main'
 });
 Router.route('/resume');
-Router.route('/map');
+Router.route('/prio');
 Router.route('/calc');
 Router.route('/dash');
 Router.route('/generator');
