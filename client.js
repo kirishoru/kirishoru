@@ -10,7 +10,32 @@ if (Meteor.isClient) {
         }
     });
 
-    //Generator Templates
+    //Prioritizer Templates
+    Template.prio.events({
+        'change #1': function () {
+            Session.set('p1', $('#1').val());
+        },
+        'change #2': function () {
+            Session.set('p2', $('#2').val());
+        },
+        'change #3': function () {
+            Session.set('p3', $('#3').val());
+        }
+    });
+
+    Template.prio.helpers({
+        'p1': function () {
+            return Session.get('p1')
+        },
+        'p2': function () {
+            return Session.get('p2')
+        },
+        'p3': function () {
+            return Session.get('p3')
+        }
+    });
+
+//Generator Templates
     Template.generator.events({
         'click #generate': function () {
             Meteor.call('make_title', 3 + Math.floor(3 * Math.random()), function (error, result) {
@@ -25,7 +50,7 @@ if (Meteor.isClient) {
         }
     });
 
-    //Calculator Templates
+//Calculator Templates
     Template.calc.events({
         'click #btn1': function (event) {
             console.log("click");

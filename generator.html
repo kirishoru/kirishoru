@@ -1,7 +1,12 @@
 <template name="generator" xmlns="http://www.w3.org/1999/html">
-    <div class="col-xs-12"><h2>Resume Bullet Generator</h2><p>I made a Markov generator out of every sentence in my resume. It's pretty weird.</p></div>
-    <div class="col-xs-12 panel panel-body">
-        <button id="generate" class="btn btn-primary btn-small">Generate New Bullet</button>
-        <h3>{{generated_title}}</h3>
+    <div class="col-md-4">
+        <h5>Resume Bullet Generator</h5>
+        <p>I made a Markov generator out of every sentence in my resume. It's pretty weird.</p>
+    </div>
+    <div class="col-md-2">
+        <a id="generate" class="btn btn-primary btn-block" href="#">Generate New Bullet</a>
+    </div>
+    <div class="col-md-6">
+        <strong>{{generated_title}}</strong>
     </div>
 </template>

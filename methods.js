@@ -10,7 +10,6 @@ Router.route('/', {
     name: 'home',
     template: 'home'
 });
-
 Meteor.methods({
     //Resume methods
     'insertResume': function () {
