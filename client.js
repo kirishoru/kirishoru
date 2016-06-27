@@ -9,6 +9,22 @@ if (Meteor.isClient) {
             return this.accomplishments;
         }
     });
+    
+    //Timeline Templates
+    Template.timeline.helpers({
+        'job': function () {
+            return Resume.find({}, {sort: {jobNum: 1}})
+        },
+        'accomps': function () {
+            return this.accomplishments;
+        }
+    });
+
+    Template.timeline.events({
+        'click #collapse0': function(event) {
+            event.preventDefault();
+            $('.collapse0').toggle("slow", "swing");        }
+    });
 
     //Prioritizer Templates
     Template.prio.events({

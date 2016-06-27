@@ -6,6 +6,7 @@ Router.route('/prio');
 Router.route('/calc');
 Router.route('/dash');
 Router.route('/generator');
+Router.route('/timeline');
 Router.route('/', {
     name: 'home',
     template: 'home'

@@ -24,6 +24,7 @@ ecmascript@0.4.6_1
 ecmascript-runtime@0.2.11_1
 ejson@1.0.12
 fastclick@1.0.12
+fortawesome:fontawesome@4.5.0
 geojson-utils@1.0.9
 hot-code-push@1.0.4
 html-tools@1.0.10

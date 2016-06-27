@@ -1,18 +1,18 @@
 <template name="menu" xmlns="http://www.w3.org/1999/html">
     <nav class="navbar navbar-full navbar-dark bg-inverse" style="margin-bottom: 1rem">
-        <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse"
-                data-target="#exCollapsingNavbar2">
+        <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2">
             &#9776;
         </button>
         <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
-            <a class="navbar-brand" href="#">CB</a>
+            <!--<a class="navbar-brand" href="#">CB</a>-->
             <ul class="nav navbar-nav">
-                <li class="nav-item active"><a class="nav-link" href="{{pathFor route='home'}}">Home</a></li>
+                <li class="nav-item active"><a class="fa fa-home fa-2x nav-link" href="{{pathFor route='home'}}"></a></li>
                 <li class="nav-item"><a class="nav-link" href="{{pathFor route='resume'}}">Resume</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{pathFor route='calc'}}">Body Composition</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{pathFor route='calc'}}">Calculator</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{pathFor route='prio'}}">Prioritize</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{pathFor route='dash'}}">Dashboard</a></li>
-                <li class="nav-item"><a class="nav-link" href="{{pathFor route='generator'}}">Markov Generator</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{pathFor route='generator'}}">Generator</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{pathFor route='timeline'}}">Timeline</a></li>
             </ul>
         </div>
     </nav>
