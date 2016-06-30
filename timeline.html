@@ -1,3 +1,46 @@
 <template name="timeline" xmlns="http://www.w3.org/1999/html">
-Coming Soon
+    <h1>Alt. Resume</h1>
+    <div class="left-content">
+        <div class="card card-block">
+            <h3 class="card-title">Overview</h3>
+            <h5 class="card-header"><strong>Software Development Manager</strong></h5>
+            <div class="card-text">
+                <p>A Software Development Manager with 16 years of mixed technology project management
+                    experience and a track record of leading teams into success. Recognized as a driver
+                    of technology vision, with extensive experience in quality, planning, and innovative
+                    solutions.</p>
+            <strong>COMPETENCIES</strong>
+                <ul>
+                    <li>Strategic &amp; Business Planning</li>
+                    <li>Project &amp; Program Management</li>
+                    <li>Change &amp; Risk Management</li>
+                    <li>Process Improvement</li>
+                    <li>Requirements, Budget, &amp; Estimation</li>
+                    <li>Budget &amp; Estimation</li>
+                    <li>Scrum/Agile SDLCs</li>
+                    <li>JS, jQuery, NodeJS, Meteor, blah blah blah</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="right-content">
+        <!--<div class="card-deck">-->
+        {{#each job}}
+            <div class="card card-block">
+                <h4 class="card-title">{{dates}}</h4>
+                <h6 class="card-header" style="display: none"><strong>{{title}}</strong> | {{company}}</h6>
+                <div class="card-text" style="display: none">
+                    <strong>RESPONSIBILITIES</strong>
+                    <p>{{description}}</p>
+                    <strong>ACCOMPLISHMENTS</strong>
+                    <ul>
+                        {{# each accomps}}
+                            <li>{{this}}</li>
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+        {{/each}}
+        <!--</div>-->
+    </div>
 </template>

@@ -24,3 +24,45 @@
 .btn-group-justified .btn .dropdown-menu,
 .btn-group-justified .btn-group .dropdown-menu {
     left: auto; }
+
+/*Timeline Styles*/
+.right-content {
+    float:left;
+    display:block;
+    /*width:35%;*/
+    padding:1% 2%;
+}
+.right-content .card-header, .left-content .card-header {
+    margin-bottom: 0;
+}
+.left-content {
+    border-right:5px dotted #666;
+    text-align:right;
+    float:left;
+    display:block;
+    width:65%;
+    padding:1% 2%;
+}
+/*.left-content p {*/
+    /*margin:150px 0 0;*/
+/*}*/
+/*.right-content p {*/
+    /*margin:80px 0 150px;*/
+/*}*/
+p {
+    -webkit-transition: all 0.7s ease-in-out;
+    -moz-transition: all 0.7 ease-in-out;
+    -ms-transition: all 0.7s ease-in-out;
+    -o-transition: all 0.7s ease-in-out;
+    transition: all 0.7s ease-in-out;
+}
+.left-content .more-padding {
+    padding-right:25px;
+}
+.right-content .more-padding {
+    padding-left:25px;
+}
+
+.test {
+    color: red;
+}

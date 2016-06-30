@@ -1,74 +1,50 @@
 <template name="resume" xmlns="http://www.w3.org/1999/html">
-    <div><h2>Resume</h2></div>
-    <div class="row">
-        <div class="col-xs-12">
-            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                <div class="panel panel-default">
-                    <div class="panel-heading" role="tab" id="heading0">
-                        <h5 class="panel-title">
-                            <a class="clearfix" data-toggle="collapse" data-parent="#accordion" href="#collapse0"
-                               aria-expanded="true" aria-controls="collapse0">
-                                <div class="col-sm-6">Overview</div>
-                                <div class="col-sm-6 text-md-right"></div>
-                            </a>
-                        </h5>
-                    </div>
-                    <div id="collapse0" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading0">
-                        <div class="panel-body row card card-block">
-                            <div class="col-sm-6">
-                                <p>A Software Development Manager with 16 years of mixed technology project management
-                                    experience and a track record of leading teams into success. Recognized as a driver
-                                    of
-                                    technology vision, with extensive experience in quality, planning, and innovative
-                                    solutions.</p>
-                            </div>
-                            <div class="col-sm-6">
-                                <h6><strong>COMPETENCIES</strong></h6>
-                                <ul>
-                                    <li>Strategic &amp; Business Planning</li>
-                                    <li>Project &amp; Program Management</li>
-                                    <li>Change &amp; Risk Management</li>
-                                    <li>Process Improvement</li>
-                                    <li>Requirements, Budget, &amp; Estimation</li>
-                                    <li>Budget &amp; Estimation</li>
-                                    <li>Scrum/Agile SDLCs</li>
-                                    <li>JavaScript, jQuery, NodeJS, Angular, Meteor, blah blah blah</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                {{#each job}}
-                    <div class="panel panel-default">
-                        <div class="panel-heading" role="tab" id="heading{{jobNum}}">
-                            <h5 class="panel-title">
-                                <a class="clearfix" data-toggle="collapse" data-parent="#accordion"
-                                   href="#collapse{{jobNum}}" aria-expanded="true" aria-controls="collapse{{jobNum}}">
-                                    <div class="col-sm-6">{{title}} - {{company}}</div>
-                                    <div class="col-sm-6 text-sm-right">{{dates}}</div>
-                                </a>
-                            </h5>
-                        </div>
-                        <div id="collapse{{jobNum}}" class="panel-collapse collapse" role="tabpanel"
-                             aria-labelledby="heading{{jobNum}}">
-                            <div class="panel-body row card card-block">
-                                <div class="col-sm-6">
-                                    <h6><strong>RESPONSIBILITIES</strong></h6>
-                                    <p>{{description}}</p>
-                                </div>
-                                <div class="col-sm-6">
-                                    <h6><strong>ACCOMPLISHMENTS</strong></h6>
-                                    <ul>
-                                        {{# each accomps}}
-                                            <li>{{this}}</li>
-                                        {{/each}}
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                {{/each}}
+    <h1>Resume</h1>
+    <div class="left-content">
+        <div class="card card-info-outline">
+            <h3 class="card-header card-info">Overview</h3>
+            <div class="card-block">
+            <h4 class="card-title"><strong>Software Development Manager</strong></h4>
+            <div class="card-text">
+                <p>A Software Development Manager with 16 years of mixed technology project management
+                    experience and a track record of leading teams into success. Recognized as a driver
+                    of technology vision, with extensive experience in quality, planning, and innovative
+                    solutions.</p>
+                <strong>COMPETENCIES</strong>
+                <ul>
+                    <li>Strategic &amp; Business Planning</li>
+                    <li>Project &amp; Program Management</li>
+                    <li>Change &amp; Risk Management</li>
+                    <li>Process Improvement</li>
+                    <li>Requirements, Budget, &amp; Estimation</li>
+                    <li>Budget &amp; Estimation</li>
+                    <li>Scrum/Agile SDLCs</li>
+                    <li>JS, jQuery, NodeJS, Meteor, blah blah blah</li>
+                </ul>
+            </div>
             </div>
         </div>
+    </div>
+    <div class="right-content">
+        <!--<div class="card-deck">-->
+        {{#each job}}
+            <div class="card card-info-outline">
+                <h4 class="card-header card-info">{{dates}}</h4>
+                <div class="card-block" style="display: none">
+                <h5 class="card-title"><strong>{{title}}</strong> | {{company}}</h5>
+                <div class="card-text">
+                    <strong>RESPONSIBILITIES</strong>
+                    <p>{{description}}</p>
+                    <strong>ACCOMPLISHMENTS</strong>
+                    <ul>
+                        {{# each accomps}}
+                            <li>{{this}}</li>
+                        {{/each}}
+                    </ul>
+                </div>
+                </div>
+            </div>
+        {{/each}}
+        <!--</div>-->
     </div>
 </template>

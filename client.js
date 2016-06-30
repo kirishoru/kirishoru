@@ -9,21 +9,14 @@ if (Meteor.isClient) {
             return this.accomplishments;
         }
     });
-    
-    //Timeline Templates
-    Template.timeline.helpers({
-        'job': function () {
-            return Resume.find({}, {sort: {jobNum: 1}})
-        },
-        'accomps': function () {
-            return this.accomplishments;
-        }
-    });
 
-    Template.timeline.events({
-        'click #collapse0': function(event) {
+    Template.resume.events({
+        'click .right-content .card': function (event) {
             event.preventDefault();
-            $('.collapse0').toggle("slow", "swing");        }
+            $(event.currentTarget).children('.card-block').toggle('slow', 'swing');
+            $('.left-content').not(event.currentTarget).toggle('slow', 'swing');
+            $('.right-content .card').not(event.currentTarget).toggle('slow', 'swing');
+        }
     });
 
     //Prioritizer Templates
