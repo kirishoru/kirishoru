@@ -26,21 +26,21 @@
     left: auto; }
 
 /*Timeline Styles*/
-.right-content {
+.left-content {
     float:left;
     display:block;
-    /*width:35%;*/
+    /*width:20%;*/
     padding:1% 2%;
 }
 .right-content .card-header, .left-content .card-header {
     margin-bottom: 0;
 }
-.left-content {
-    border-right:5px dotted #666;
-    text-align:right;
-    float:left;
+.right-content {
+    border-left:5px dotted #666;
+    text-align:left;
+    float:right;
     display:block;
-    width:65%;
+    width:75%;
     padding:1% 2%;
 }
 /*.left-content p {*/
@@ -55,14 +55,4 @@ p {
     -ms-transition: all 0.7s ease-in-out;
     -o-transition: all 0.7s ease-in-out;
     transition: all 0.7s ease-in-out;
-}
-.left-content .more-padding {
-    padding-right:25px;
-}
-.right-content .more-padding {
-    padding-left:25px;
-}
-
-.test {
-    color: red;
 }

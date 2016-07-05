@@ -1,6 +1,28 @@
 <template name="resume" xmlns="http://www.w3.org/1999/html">
     <h1>Resume</h1>
     <div class="left-content">
+        <!--<div class="card-deck">-->
+        {{#each job}}
+            <div class="card card-info-outline">
+                <h4 class="card-header card-info">{{dates}}</h4>
+                <div class="card-block" style="display: none">
+                    <h5 class="card-title"><strong>{{title}}</strong> | {{company}}</h5>
+                    <div class="card-text">
+                        <strong>RESPONSIBILITIES</strong>
+                        <p>{{description}}</p>
+                        <strong>ACCOMPLISHMENTS</strong>
+                        <ul>
+                            {{# each accomps}}
+                                <li>{{this}}</li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        {{/each}}
+        <!--</div>-->
+    </div>
+    <div class="right-content">
         <div class="card card-info-outline">
             <h3 class="card-header card-info">Overview</h3>
             <div class="card-block">
@@ -25,26 +47,5 @@
             </div>
         </div>
     </div>
-    <div class="right-content">
-        <!--<div class="card-deck">-->
-        {{#each job}}
-            <div class="card card-info-outline">
-                <h4 class="card-header card-info">{{dates}}</h4>
-                <div class="card-block" style="display: none">
-                <h5 class="card-title"><strong>{{title}}</strong> | {{company}}</h5>
-                <div class="card-text">
-                    <strong>RESPONSIBILITIES</strong>
-                    <p>{{description}}</p>
-                    <strong>ACCOMPLISHMENTS</strong>
-                    <ul>
-                        {{# each accomps}}
-                            <li>{{this}}</li>
-                        {{/each}}
-                    </ul>
-                </div>
-                </div>
-            </div>
-        {{/each}}
-        <!--</div>-->
-    </div>
+
 </template>

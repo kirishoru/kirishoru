@@ -3,37 +3,48 @@
     <div class="row">
         <div class="col-sm-6">
             <h5>Add some things...(at least three)</h5>
-            <form>
+            <form id="form1">
                 <div class="form-group">
-                    <label class="input-group input-group">
+                    <label class="input-group">
                         <span class="input-group-addon">1</span>
-                        <input class="form-control" type="text" id="1" placeholder="" required/>
+                        <input class="form-control" type="text" name="1" value="pizza" required/>
                     </label>
-                    <label class="input-group input-group">
+                    <label class="input-group">
                         <span class="input-group-addon">2</span>
-                        <input class="form-control" type="text" id="2" placeholder="" required/>
+                        <input class="form-control" type="text" name="2" value="sushi" required/>
                     </label>
-                    <label class="input-group input-group">
+                    <label class="input-group">
                         <span class="input-group-addon">3</span>
-                        <input class="form-control" type="text" id="3" placeholder="" required/>
+                        <input class="form-control" type="text" name="3" value="chicken" required/>
                     </label>
                 </div>
+                <!--<button id="button1" type="submit">submit</button>-->
             </form>
         </div>
-        <div class="col-sm-6">
-            <h5 class="text-sm-center">...then choose wisely</h5>
-            <label class="btn-group-justified" data-toggle="buttons">
-                <span class="btn btn-primary-outline"><input type="radio" id="1-1" name="group3">{{p1}}</span>
-                <span class="btn btn-primary-outline"><input type="radio" id="1-2" name="group3">{{p2}}</span>
-            </label>
-            <label class="btn-group-justified" data-toggle="buttons">
-                <span class="btn btn-primary-outline"><input type="radio" id="2-1" name="group3">{{p2}}</span>
-                <span class="btn btn-primary-outline"><input type="radio" id="2-2" name="group3">{{p3}}</span>
-            </label>
-            <label class="btn-group-justified" data-toggle="buttons">
-                <span class="btn btn-primary-outline"><input type="radio" id="3-1" name="group3">{{p3}}</span>
-                <span class="btn btn-primary-outline"><input type="radio" id="3-2" name="group3">{{p1}}</span>
-            </label>
+        <div class="col-sm-6 priogrid">
+            <h5 class="text-sm-center">...then choose wisely</h5>{{what}}
+            {{#each thing}}
+                <label class="btn-group-justified" data-toggle="buttons">
+                <span class="btn btn-primary-outline"><input type="radio" id="1-1" name="group1">{{value}}</span>
+                <span class="btn">or</span>
+                <span class="btn btn-primary-outline"><input type="radio" id="1-2" name="group1">{{value}}</span>
+                </label>
+            {{/each}}
+            <!--<label class="btn-group-justified" data-toggle="buttons">-->
+                <!--<span class="btn btn-primary-outline"><input type="radio" id="1-1" name="group1">{{p1}}</span>-->
+                <!--<span class="btn">or</span>-->
+                <!--<span class="btn btn-primary-outline"><input type="radio" id="1-2" name="group1">{{p2}}</span>-->
+            <!--</label>-->
+            <!--<label class="btn-group-justified" data-toggle="buttons">-->
+                <!--<span class="btn btn-primary-outline"><input type="radio" id="2-1" name="group2">{{p2}}</span>-->
+                <!--<span class="btn">or</span>-->
+                <!--<span class="btn btn-primary-outline"><input type="radio" id="2-2" name="group2">{{p3}}</span>-->
+            <!--</label>-->
+            <!--<label class="btn-group-justified" data-toggle="buttons">-->
+                <!--<span class="btn btn-primary-outline"><input type="radio" id="3-1" name="group3">{{p3}}</span>-->
+                <!--<span class="btn">or</span>-->
+                <!--<span class="btn btn-primary-outline"><input type="radio" id="3-2" name="group3">{{p1}}</span>-->
+            <!--</label>-->
         </div>
     </div>
 </template>

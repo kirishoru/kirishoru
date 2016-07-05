@@ -1,5 +1,8 @@
 if (Meteor.isClient) {
 
+    //Dynamic Templates?
+
+
     //Resume Templates
     Template.resume.helpers({
         'job': function () {
@@ -11,37 +14,66 @@ if (Meteor.isClient) {
     });
 
     Template.resume.events({
-        'click .right-content .card': function (event) {
+        'click .left-content .card': function (event) {
             event.preventDefault();
             $(event.currentTarget).children('.card-block').toggle('slow', 'swing');
-            $('.left-content').not(event.currentTarget).toggle('slow', 'swing');
-            $('.right-content .card').not(event.currentTarget).toggle('slow', 'swing');
+            $('.right-content').not(event.currentTarget).toggle('slow', 'swing');
+            $('.left-content .card').not(event.currentTarget).toggle('slow', 'swing');
         }
     });
 
     //Prioritizer Templates
     Template.prio.events({
-        'change #1': function () {
-            Session.set('p1', $('#1').val());
-        },
-        'change #2': function () {
-            Session.set('p2', $('#2').val());
-        },
-        'change #3': function () {
-            Session.set('p3', $('#3').val());
+        'change #form1': function (event) {
+            event.preventDefault();
+            Session.set('form1D', $('#form1').serializeArray());
+            var form1Data = Session.get('form1D')
+
         }
+        // ,
+        // 'submit': function (event) {
+        //     event.preventDefault();
+        //     var form1Data = $('#form1').serializeArray();
+        //     for (i = 0; i < form1Data.length; i++) {
+        //         console.log(form1Data[i].value);
+        //     }
+        // }
     });
 
+    Template.prio.onCreated(function () {
+        var data = this.data;
+        console.log("onCreated", data);
+    })
+
+    Template.prio.onRendered(function () {
+        var data = this.data;
+        console.log("onRendered", data);
+    })
+
     Template.prio.helpers({
-        'p1': function () {
-            return Session.get('p1')
+        'thing': function () {
+            return Session.get('form1D')
         },
-        'p2': function () {
-            return Session.get('p2')
+        formData: function () {
+            var tab = Template.instance().currentTab.get();
+            var data = Session.get('form1D');
+            return {contentType: tab, items: data[tab]};
         },
-        'p3': function () {
-            return Session.get('p3')
+        what: function () {
+            var data = Template.instance().data;
+            return "what the hell is " + data.contentType + "?";
         }
+
+        // ,
+        // 'p1': function () {
+        //     return Session.get('form1D')[0].value
+        // },
+        // 'p2': function () {
+        //     return Session.get('form1D')[1].value
+        // },
+        // 'p3': function () {
+        //     return Session.get('form1D')[2].value
+        // }
     });
 
 //Generator Templates
